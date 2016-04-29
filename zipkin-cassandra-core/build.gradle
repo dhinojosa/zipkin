@@ -4,6 +4,10 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    all*.exclude group: 'org.scala-lang'
+}
+
 dependencies {
     compile(group: 'com.datastax.cassandra', name: 'cassandra-driver-core', version: '2.1.10'){
         exclude group: 'com.github.jnr', module: 'jnr-posix'

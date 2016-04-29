@@ -220,8 +220,8 @@ allprojects { thisProject ->
 
 }
 
-// Build settings shared by all subprojects
-subprojects { subproject ->
+// Build settings shared by all scala subprojects
+configure(subprojects - [project(':zipkin-cassandra-core'),project(':zipkin-ui')]) {
     apply from: "$rootDir/gradle/scalatest.gradle"
 
     compileTestScala.scalaCompileOptions.additionalParameters = ["-feature"]
